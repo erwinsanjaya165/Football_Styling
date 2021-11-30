@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Dimensions,
+} from 'react-native';
 import {
   IconPaketLangganan,
   IconBookingLapangan,
@@ -26,12 +32,14 @@ const Layanan = ({title, active, onPress}) => {
 
 export default Layanan;
 
+const windowWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
   container: active => ({
     alignItems: 'center',
     backgroundColor: active ? Warna_Utama : '#FFFFFF',
     borderRadius: 10,
-    padding: 10,
+    padding: windowWidth * 0.012,
     borderColor: Warna_Disable,
     borderWidth: active ? 0 : 2,
   }),
